@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'puro-malte', loadChildren: './puro-malte/puro-malte.module#PuroMaltePageModule' },
   { path: 'pilsen', loadChildren: './pilsen/pilsen.module#PilsenPageModule' },
   { path: 'lager', loadChildren: './lager/lager.module#LagerPageModule' },
-  { path: 'cerveja-detalhes', loadChildren: './cerveja-detalhes/cerveja-detalhes.module#CervejaDetalhesPageModule' },
+  { path: 'cerveja-detalhes/:id', loadChildren: './cerveja-detalhes/cerveja-detalhes.module#CervejaDetalhesPageModule' },
   { path: 'ceverja-detalhes', loadChildren: './ceverja-detalhes/ceverja-detalhes.module#CeverjaDetalhesPageModule' },
 ];
 

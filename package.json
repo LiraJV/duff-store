@@ -1,7 +1,7 @@
 {
   "name": "duff-store",
   "version": "0.0.1",
-  "author": "Richard Brabosa",
+  "author": "João Vitor da Silva Lira",
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",

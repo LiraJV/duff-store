@@ -4,11 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
-  { path: 'puro-malte', loadChildren: './puro-malte/puro-malte.module#PuroMaltePageModule' },
-  { path: 'pilsen', loadChildren: './pilsen/pilsen.module#PilsenPageModule' },
-  { path: 'lager', loadChildren: './lager/lager.module#LagerPageModule' },
   { path: 'cerveja-detalhes/:id', loadChildren: './cerveja-detalhes/cerveja-detalhes.module#CervejaDetalhesPageModule' },
   { path: 'ceverja-detalhes', loadChildren: './ceverja-detalhes/ceverja-detalhes.module#CeverjaDetalhesPageModule' },
+  { path: 'add-cerveja', loadChildren: './add-cerveja/add-cerveja.module#AddCervejaPageModule' },
 ];
 
 @NgModule({

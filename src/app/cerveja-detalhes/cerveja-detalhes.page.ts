@@ -19,11 +19,17 @@ export class CervejaDetalhesPage implements OnInit {
     let idCerveja = this.route.snapshot.params.id;
     
     if(idCerveja==='50'){
-      this.nome = 'Homens pelados sem roupa'
-      this.detalhes = 'Mano eu gosto é de rola'
+      this.nome = 'Proibida'
+      this.detalhes = 'Tão gostosa que é proibida. A melhor puro malte do Ceará.'
     }else if(idCerveja==='60'){
       this.nome = 'Skol'
       this.detalhes = 'A puro malte que desce redondo.'
+    }else if(idCerveja==='70'){
+      this.nome = 'Brahma extra lager'
+      this.detalhes = 'A melhor Lager da Região sul do Brasil'
+    }else if(idCerveja==='80'){
+      this.nome = 'Eisenbahn'
+      this.detalhes = 'A melhor pilsen do Acré.'
     }
   }
 

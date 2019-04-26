@@ -5,24 +5,34 @@ import { Component, OnInit, } from '@angular/core';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit{
+export class HomePage implements OnInit{ç
+
+  constructor(){
+    this.cervejas = [];
+  }
+
 
   cervejas;
 
   ngOnInit(){
     
   }
+  excluir(nome){
+    localStorage.removeItem(nome)
+  }
+
   ionViewDidEnter(){
+
     this.cervejas = [];
 
-    const chavesDisponiveis = sessionStorage.getItem('chaves');
-    
-    const chavesSeparadas = chavesDisponiveis.split(';');
+    const tamanhoDoBanco = localStorage.length
 
-    for(var i = 0; i < chavesSeparadas.length; i++){
-      const cerveja = sessionStorage.getItem(chavesSeparadas[i])
-      const cervejaObj = JSON.parse(cerveja);
-      this.cervejas.push(cervejaObj);
-  }
+    for (let index = 0; index < tamanhoDoBanco; index++) {
+      const chave = localStorage.key(index)
+      const cerveja = localStorage.getItem(chave)
+      const cervejaReal = JSON.parse(cerveja)
+      
+    }
+
   }
 }

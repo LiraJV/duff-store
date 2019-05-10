@@ -1,13 +1,15 @@
 import { Component, OnInit, } from '@angular/core';
+import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit{ç
+export class HomePage implements OnInit{
 
-  constructor(){
+  constructor(private router:Router){
     this.cervejas = [];
   }
 
@@ -19,10 +21,14 @@ export class HomePage implements OnInit{ç
   }
   excluir(nome){
     localStorage.removeItem(nome)
+    this.listar();
   }
 
-  ionViewDidEnter(){
+  detalhes(nome){
+    this.router.navigate(["/cerveja-detalhes", nome]);
+  }
 
+  listar(){
     this.cervejas = [];
 
     const tamanhoDoBanco = localStorage.length
@@ -31,8 +37,13 @@ export class HomePage implements OnInit{ç
       const chave = localStorage.key(index)
       const cerveja = localStorage.getItem(chave)
       const cervejaReal = JSON.parse(cerveja)
-      
+      this.cervejas.push(cervejaReal); 
     }
-
   }
-}
+  ionViewDidEnter(){
+      this.listar()
+    
+    }
+  }
+  
+
